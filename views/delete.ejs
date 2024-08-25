@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    
+    <div class="main h-screen w-full text-white flex flex-wrap justify-center items-center">
+        <form action="/delete" method="post" class="flex flex-wrap flex-col bg-slate-700 p-5 rounded-md gap-4">
+            <h1 class="font-bold text-2xl text-center">Delete Your Data Form</h1>
+            <input type="text" name="name" class="px-3 py-2 rounded-md text-black" required placeholder="Enter Your Name : ">
+            <!-- <input type="text" name="email" class="px-3 py-2 rounded-md text-black" placeholder="Enter Your Email : "> -->
+            <input type="text" name="pass" class="px-3 py-2 rounded-md text-black" required placeholder="Enter Your Password : ">
+            <button type="submit" class="bg-blue-700 px-3 py-2 rounded-md">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

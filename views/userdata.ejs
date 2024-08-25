@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="main h-screen bg-black text-white w-full p-5">
+            <h1 class="font-bold text-2xl text-center">All User Data</h1>
+            <% users.forEach(user => { %>
+            <div class="bg-slate-600 rounded-md m-5 p-5">
+                <h2 class="font-bold text-xl"><%= user.name %></h2>
+                <h2 class="font-bold text-xl"><%= user.email %></h2> 
+            </div>
+            <% }) %>
+    </div>
+</body>
+</html>
