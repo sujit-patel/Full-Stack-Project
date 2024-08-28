@@ -24,26 +24,22 @@
     </header>
 
     <div class="main h-min bg-slate-600 pt-10 text-white mr-20 w-full p-5">
-        <h1 class="font-bold text-6xl underline text-center">All User Data</h1>
-        <div class="flex flex-wrap justify-center mt-5">
-            <!-- <div class="flex flex-wrap justify-center mt-5"> -->
-            <% if( udata.length> 0) { %>
-                <% udata.forEach(user=> { %>
-                    <div class="bg-slate-700 flex w-62 flex-col justify-between rounded-md gap-1 m-5 w-1/6 p-5">
-                        <img class="object-cover overflow-hidden h-72" src="<%=user.imgUrl %>" alt="<%=user.name %>">
-                        <h2 class="text-xl font-bold "><%=user.name %></h2>
-                        <p class="text-slate-400 no-underline hover:underline cursor-not-allowed"><%=user.email %></p>
-                        <div class="flex mt-3 justify-between">
-                            <a class="hover:text-blue-500 text-blue-400" href="/profile/<%=user.name %>">Edit</a>
-                            <a class="hover:text-red-600 text-red-500" href="">Delete</a>
-                        </div>
-                    </div>
-                    <% }) %>
-                        <% } else { %>
-                            <div class="bg-slate-700 flex justify-between rounded-md m-5 w-1/2 p-5">
-                                <h2 class="text-xl font-bold "> Data Not Found..! </h2>
-                            </div>
-                            <% } %>
+        <h1 class="font-bold text-6xl underline text-center">My Profile</h1>
+        <div class="flex justify-center mt-5">
+            <div class="bg-slate-700 flex w-62 flex-col justify-between rounded-md gap-1 m-5 w-1/6 p-5">
+                <img class="object-cover overflow-hidden h-72" src="<%=userProfile.imgUrl %>"
+                    alt="<%=userProfile.name %>">
+                <h2 class="text-xl font-bold ">
+                    <%=userProfile.name %>
+                </h2>
+                <p class="text-slate-400 no-underline hover:underline cursor-not-allowed">
+                    <%=userProfile.email %>
+                </p>
+                <div class="flex mt-3 justify-between">
+                    <!-- <a class="hover:text-blue-500 text-blue-400" href="">Edit</a> -->
+                    <a class="hover:text-red-600 text-red-500" href="">Delete</a>
+                </div>
+            </div>
         </div>
     </div>
 

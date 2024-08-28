@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 
-mongoose.connect('mongodb://localhost:27017/demosujit');
+mongoose.connect('mongodb://localhost:27017/demoApp');
 
 const userSchema = mongoose.Schema({
     name: String,
     email: String,
-    pass: String
+    pass: String,
+    imgUrl: String
 });
 
 

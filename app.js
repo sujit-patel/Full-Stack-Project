@@ -18,6 +18,26 @@ app.get('/views/:fileName', async (req, res) => {
     res.render(`${req.params.fileName}`, {udata: alldata});
 });
 
+app.get('/create', (req, res) => {
+    res.render("signup");
+});
+
+app.post('/create', async (req, res) => {
+    const { name, email, pass, userImg } = req.body;
+    try {
+        let newUser = await userModel.create({
+            name: name,
+            email: email,
+            pass: pass,
+            imgUrl: userImg
+        });
+        // res.send(alert(`User ${newUser.name} created successfully!`));
+        res.redirect('/');
+    } catch (err) {
+        res.status(500).send("Error creating user");
+    }
+});
+
 app.get('/userdata', async (req, res) => {
     let alldata = await userModel.find();
     res.render("userdata", {udata: alldata});
@@ -42,23 +62,10 @@ app.post('/delete', async (req, res) => {
     }
 });
 
-app.get('/create', (req, res) => {
-    res.render("signup");
-});
-
-app.post('/create', async (req, res) => {
-    const { name, email, pass } = req.body;
-    try {
-        let newUser = await userModel.create({
-            name: name,
-            email: email,
-            pass: pass
-        });
-        // res.send(alert(`User ${newUser.name} created successfully!`));
-        res.redirect('/');
-    } catch (err) {
-        res.status(500).send("Error creating user");
-    }
+// profile Route
+app.get('/profile/:name', async (req, res) => { 
+    let userProfile = await userModel.findOne({name: req.params.name});
+    res.render("profile", {userProfile});
 });
 
 app.listen(3000, () => {
