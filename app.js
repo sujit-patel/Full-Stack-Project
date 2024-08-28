@@ -32,13 +32,13 @@ app.post('/delete', async (req, res) => {
     try {
         let deleteuser = await userModel.findOneAndDelete({ name: name });
         if (deleteuser) {
-            res.send(`User ${name} deleted successfully!`);
+            res.redirect(`/delete?message=User ${name} deleted successfully!`);
         } else {
-            res.status(404).send(`User ${name} not found.`);
+            res.redirect(`/delete?message=User ${name} not found.`);
         }
     } catch (err) {
         console.error(err);
-        res.status(500).send("Error deleting user");
+        res.redirect(`/delete?message=Error deleting user`);
     }
 });
 

@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-black">
+<body>
     <header class="justify-center p-5 bg-black text-white flex w-full">
         <nav class="w-2/5 border-b-2 px-1 bg-slate-700 rounded border-white rounded-lg">
             <ul class="flex justify-between px-5 py-3">
@@ -23,9 +23,9 @@
         </nav>
     </header>
 
-    <div class="main h-min bg-slate-600 pt-10 text-white w-full p-5">
+    <div class="main h-min bg-slate-600 pt-10 text-white w-full pb-40 p-5">
         <h1 class="font-bold text-6xl underline text-center">All User Data</h1>
-        <div class=" justify-center mt-5">
+        <div class="flex flex-wrap justify-center mt-5">
         <!-- <div class="flex flex-wrap justify-center mt-5"> -->
             <% if( udata.length> 0) { %>
                 <% udata.forEach(user=> { %>
