@@ -15,27 +15,41 @@
         <header class="relative justify-center flex w-full">
             <nav style="background-color: #0071c8f4;" class="w-2/5 bg-opacity-75 mt-5 rounded-lg">
                 <ul class="flex justify-between px-5 py-3">
-                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/index.ejs">Home</a></li>
-                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/signup.ejs">Signup</a></li>
+                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/index.ejs">Home</a>
+                    </li>
+                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/signup.ejs">Signup</a>
+                    </li>
                     <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/">Login</a></li>
-                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/update.ejs">Update</a></li>
-                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/delete.ejs">Delete</a></li>
-                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/userdata.ejs">All User Name & Email</a></li>
+                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/update.ejs">Update</a>
+                    </li>
+                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/delete.ejs">Delete</a>
+                    </li>
+                    <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/userdata.ejs">All User
+                            Name & Email</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="hero relative flex flex-grow justify-center items-center">
-            <form action="/login" method="post"
-                class="bg-slate-700 rounded-md p-5 flex flex-col gap-5 text-center">
-                <h1 class="text-xl font-bold">Login</h1>
-                <input type="text" name="name" placeholder="Enter Your Name" class="px-3 py-2 rounded-md text-black">
-                <input type="text" name="email" placeholder="Enter Your Email" class="px-3 py-2 rounded-md text-black">
-                <input type="password" name="pass" placeholder="Enter Your Password"
-                    class="px-3 py-2 rounded-md text-black">
-                <button type="submit" class="bg-blue-700 px-3 py-2 rounded-md">Submit</button>
-            </form>
-        </div>
+        <% if(udata.length> 0) { %>
+            <div class="hero relative flex flex-grow justify-center items-center">
+                <form action="/login" method="post" class="bg-slate-700 rounded-md p-5 flex flex-col gap-5 text-center">
+                    <h1 class="text-xl font-bold">Login</h1>
+                    <input type="text" name="name" placeholder="Enter Your Name"
+                        class="px-3 py-2 rounded-md text-black">
+                    <input type="text" name="email" placeholder="Enter Your Email"
+                        class="px-3 py-2 rounded-md text-black">
+                    <input type="password" name="pass" placeholder="Enter Your Password"
+                        class="px-3 py-2 rounded-md text-black">
+                    <button type="submit" class="bg-blue-700 px-3 py-2 rounded-md">Submit</button>
+                </form>
+            </div>
+            <% }else{ %>
+                <div class="w-full flex h-3/4 items-start justify-center">
+                    <div class="bg-slate-700 relative flex justify-between rounded-md m-5 w-1/2 p-5">
+                        <h2 class="text-xl font-bold "> Data Not Found..! </h2>
+                    </div>
+                </div>
+                <% } %>
 
         <footer style="background-color: #9bfb00b3;" class="text-black relative font-bold text-center py-2">
             <p>&copy; 2024 Your Website. All rights reserved.</p>

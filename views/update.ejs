@@ -25,6 +25,7 @@
             </nav>
         </header>
 
+        <% if( udata.length> 0) { %>
         <div class="hero relative flex flex-grow justify-center items-center">
             <form action="/update" method="post"
                 class="bg-slate-700 rounded-md p-5 flex flex-col gap-5 text-center">
@@ -36,6 +37,13 @@
                 <button type="submit" class="bg-blue-700 px-3 py-2 rounded-md">Submit</button>
             </form>
         </div>
+        <% }else{ %>
+            <div class="w-full flex h-3/4 items-start justify-center">
+                <div class="bg-slate-700 relative flex justify-between rounded-md m-5 w-1/2 p-5">
+                    <h2 class="text-xl font-bold "> Data Not Found..! </h2>
+                </div>
+            </div>
+            <% } %>
 
         <footer style="background-color: #9bfb00b3;" class="text-black relative font-bold text-center py-2">
             <p>&copy; 2024 Your Website. All rights reserved.</p>

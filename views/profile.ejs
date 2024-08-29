@@ -2,51 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All User</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All User</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <header class="justify-center p-5 bg-black text-white flex w-full">
-        <nav class="w-2/5 border-b-2 px-1 bg-slate-700 rounded border-white rounded-lg">
-            <ul class="flex justify-between px-5 py-3">
-                <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/index.ejs">Home</a></li>
-                <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/signup.ejs">Signup</a></li>
-                <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/login.ejs">Login</a></li>
-                <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/update.ejs">Update</a></li>
-                <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/delete.ejs">Delete</a></li>
-                <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/userdata.ejs">All User Name
-                        & Email</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="h-screen bg-black flex justify-between flex-col">    
+  <header class="justify-center p-5 bg-black text-white flex w-full">
+      <nav class="w-2/5 border-b-2 px-1 bg-slate-700 rounded border-white rounded-lg">
+        <ul class="flex justify-between px-5 py-3">
+        <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/index.ejs">Home</a></li>
+        <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/signup.ejs">Signup</a></li>
+        <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/login.ejs">Login</a></li>
+        <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/update.ejs">Update</a></li>
+        <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/delete.ejs">Delete</a></li>
+        <li><a class="hover:border-b-2 px-1 rounded hover:border-white" href="/views/userdata.ejs">All User Name &Email</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="main h-min bg-slate-600 pt-10 text-white mr-20 w-full p-5">
-        <h1 class="font-bold text-6xl underline text-center">My Profile</h1>
-        <div class="flex justify-center mt-5">
-            <div class="bg-slate-700 flex w-62 flex-col justify-between rounded-md gap-1 m-5 w-1/6 p-5">
-                <img class="object-cover overflow-hidden h-72" src="<%=userProfile.imgUrl %>"
-                    alt="<%=userProfile.name %>">
-                <h2 class="text-xl font-bold ">
-                    <%=userProfile.name %>
-                </h2>
-                <p class="text-slate-400 no-underline hover:underline cursor-not-allowed">
-                    <%=userProfile.email %>
-                </p>
-                <div class="flex mt-3 justify-between">
-                    <!-- <a class="hover:text-blue-500 text-blue-400" href="">Edit</a> -->
-                    <a class="hover:text-red-600 text-red-500" href="">Delete</a>
-                </div>
-            </div>
+  <div class="bg-slate-600 text-white w-full p-8">
+    <h1 class="font-bold text-6xl underline text-center">My Profile</h1>
+    <div class="flex justify-center mt-10">
+      <div class="bg-slate-700 flex w-62 justify-between items-center w-2/5 h-auto rounded-md gap-10 m-5 p-5">
+        <img class="object-cover scale-105 rounded-full h-72" src="<%=userProfile.imgUrl %>" alt="<%=userProfile.name %>" />
+        <div class="flex flex-col justify-between flex-wrap h-3/5">
+          <h2>Your Name : <span class="text-xl text-slate-400 font-bold"><%=userProfile.name %></span></h2>
+          <p>Email : <span class="text-slate-400 no-underline hover:underline cursor-not-allowed"><%=userProfile.email %></span></p>
+          <h3>Password : <span class="text-slate-400 no-underline hover:underline cursor-not-allowed"><%=userProfile.pass %></span></h3>
+          <div class="flex mt-3 justify-between">
+            <a class="hover:text-red-600 text-red-500" href="/profile/<%=userProfile.email %>/delete">Delete YourAccount</a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
+  <footer class="bg-black text-slate-300 text-center py-4">
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </footer>
+</div>
 
-    <footer class="bg-black text-slate-300 text-center py-2">
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>
